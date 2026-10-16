@@ -28,7 +28,8 @@ pipeline {
                             --junitxml=reports/junit.xml \
                             --cov=app \
                             --cov-report=xml:reports/coverage.xml \
-                            --cov-report=term-missing
+                            --cov-report=term-missing \
+                            --cov-fail-under=80
                     '''
                 }
             }
