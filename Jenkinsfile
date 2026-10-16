@@ -20,6 +20,12 @@ pipeline {
             }
         }
 
+        stage('Lint') {
+            steps {
+                sh '.venv/bin/flake8 app tests --max-line-length=100'
+            }
+        }
+
         stage('Tests') {
             steps {
                 catchError(buildResult: 'UNSTABLE', stageResult: 'UNSTABLE') {
